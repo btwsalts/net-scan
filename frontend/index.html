@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NetScan - web-based TCP port scanner for authorized targets.">
+  <title>NetScan — Network Port Scanner</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand"><span class="dot"></span> NETSCAN</div>
+      <div class="status">TCP SCANNER <span>●</span></div>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">NETWORK SECURITY TOOL</p>
+      <h1>Discover open ports.</h1>
+      <p class="subtitle">Enter an IPv4 address to check a focused set of common TCP ports.</p>
+
+      <form id="scan-form" class="scan-form">
+        <label for="ip">TARGET IP</label>
+        <div class="input-row">
+          <input id="ip" name="ip" type="text" placeholder="192.168.1.1" autocomplete="off" required>
+          <button id="scan-button" type="submit">SCAN <span>→</span></button>
+        </div>
+        <p class="notice">Only scan systems you own or have permission to test.</p>
+      </form>
+    </section>
+
+    <section id="dashboard" class="dashboard hidden">
+      <div class="stats">
+        <div class="stat"><span>TARGET</span><strong id="target">—</strong></div>
+        <div class="stat"><span>SCANNED</span><strong id="scanned">—</strong></div>
+        <div class="stat"><span>OPEN</span><strong id="open-count">—</strong></div>
+      </div>
+
+      <div class="results-card">
+        <div class="results-header">
+          <div>
+            <p class="eyebrow">SCAN RESULTS</p>
+            <h2>Port status</h2>
+          </div>
+          <span id="result-badge" class="badge">READY</span>
+        </div>
+        <div id="results" class="results"></div>
+      </div>
+    </section>
+
+    <p id="error" class="error hidden"></p>
+    <footer>NETSCAN / EDUCATIONAL SECURITY TOOL</footer>
+  </main>
+  <script src="/script.js"></script>
+</body>
+</html>
